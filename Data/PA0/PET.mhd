@@ -1,0 +1,14 @@
+ObjectType = Image
+NDims = 3
+BinaryData = True
+BinaryDataByteOrderMSB = False
+CompressedData = False
+TransformMatrix = 1 0 0 0 1 0 0 0 1
+Offset = 0 0 0
+CenterOfRotation = 0 0 0
+AnatomicalOrientation = RAI
+ElementSpacing = 5.46875 5.46875 3.27002
+ITK_InputFilterName = MetaImageIO
+DimSize = 128 128 207
+ElementType = MET_SHORT
+ElementDataFile = PET.raw
