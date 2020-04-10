@@ -1,0 +1,11 @@
+function smoothcutImage = Gaussian3D(filsize,sigma,cutImage)
+% filsize = 3;
+% sigma = 2;
+hfil = floor(filsize/2);
+[x y z] = meshgrid(-hfil:hfil,-hfil:hfil,-hfil:hfil);
+fil_x = exp(-x.^2/(2*sigma^2))./(sigma*sqrt(2*pi)); clear x;
+fil_y = exp(-y.^2/(2*sigma^2))./(sigma*sqrt(2*pi)); clear y;
+fil_z = exp(-z.^2/(2*sigma^2))./(sigma*sqrt(2*pi)); clear z;
+f = fil_x .* fil_y .* fil_z;
+f = f/sum(abs(f(:)));
+smoothcutImage = imfilter(cutImage,f,'replicate');
